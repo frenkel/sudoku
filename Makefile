@@ -1,2 +1,2 @@
 PHONY:
-	cc -o sudoku src/*.c
+	cc -Wall -o sudoku src/*.c
