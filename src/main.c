@@ -12,9 +12,9 @@ int main()
 	print(grid);
 
 	if (verify(grid))
-		printf("Valid rows and columns\n");
+		printf("Valid rows, columns and blocks\n");
 	else
-		printf("Invalid rows and columns\n");
+		printf("Invalid rows, columns and blocks\n");
 
 	return 0;
 }
