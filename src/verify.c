@@ -1,19 +1,22 @@
 int verify_rows(int grid[])
 {
-	int row_total = 0;
+	int found[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int row;
 	int column;
 
 	for (row = 0; row < 9; row++) {
 
-		row_total = 0;
-
 		for (column = 0; column < 9; column++) {
-			row_total += grid[column + row * 9]; 
+			/* prevent overflow using modulo 9 */
+			found[grid[column + row * 9] % 9] = 1; 
 		}
 
-		if (row_total != 45) {
-			return 0;
+		for (column = 0; column < 9; column++) {
+			if (found[column] != 1)
+				return 0;
+			else
+				/* reset for next row */
+				found[column] = 0;
 		}
 	}
 
