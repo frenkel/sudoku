@@ -11,10 +11,10 @@ int main()
 
 	print(grid);
 
-	if (verify_rows(grid))
-		printf("Valid rows\n");
+	if (verify(grid))
+		printf("Valid rows and columns\n");
 	else
-		printf("Invalid rows\n");
+		printf("Invalid rows and columns\n");
 
 	return 0;
 }

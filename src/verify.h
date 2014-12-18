@@ -1,1 +1,1 @@
-int verify_rows(int[]);
+int verify(int[]);
