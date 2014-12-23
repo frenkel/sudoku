@@ -2,12 +2,18 @@
 #include "print.h"
 #include "parse.h"
 #include "verify.h"
+#include "generate.h"
 
-int main()
+int main(int argc, char *argv[])
 {
 	int grid[9 * 9];
 
-	load(grid);
+	if (argc == 1) {
+		load(grid);
+	} else if (argc == 2 && argv[1][0] == '-'
+		 && argv[1][1] == 'g') {
+		generate(grid);
+	}
 
 	print(grid);
 
