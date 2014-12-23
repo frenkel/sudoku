@@ -1,4 +1,4 @@
-int verify(int *grid)
+int verify(int *grid, int complete)
 {
 	int found_h[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int found_v[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -25,15 +25,17 @@ int verify(int *grid)
 		}
 
 		for (column = 0; column < 9; column++) {
-			if (found_h[column] != 1 || found_v[column] != 1
-					|| found_b[column] != 1)
+			if (found_h[column] > 1 || found_v[column] > 1
+					|| found_b[column] > 1)
 				return 0;
-			else {
-				/* reset for next row */
-				found_h[column] = 0;
-				found_v[column] = 0;
-				found_b[column] = 0;
-			}
+			else if ((found_h[column] == 0 || found_v[column] == 0
+					 || found_b[column] == 0) && complete)
+				return 0;
+
+			/* reset for next row */
+			found_h[column] = 0;
+			found_v[column] = 0;
+			found_b[column] = 0;
 		}
 	}
 

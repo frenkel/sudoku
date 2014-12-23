@@ -11,7 +11,7 @@ int main()
 
 	print(grid);
 
-	if (verify(grid))
+	if (verify(grid, 1))
 		printf("Valid rows, columns and blocks\n");
 	else
 		printf("Invalid rows, columns and blocks\n");
