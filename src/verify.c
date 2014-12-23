@@ -11,9 +11,9 @@ int verify(int *grid, int complete)
 
 		for (column = 0; column < 9; column++) {
 			/* prevent overflow using modulo 9 */
-			found_h[grid[column + row * 9] % 9] = 1; 
+			found_h[grid[column + row * 9] % 9]++;
 			/* switch column and row to walk vertical */
-			found_v[grid[row + column * 9] % 9] = 1; 
+			found_v[grid[row + column * 9] % 9]++;
 
 			/* walk the block left to right, top to bottom
 			   by doing three steps, then skipping 9, etc */
@@ -21,7 +21,7 @@ int verify(int *grid, int complete)
 			/* walk all blocks left to right,
 			   skip to next block after every row */
 			block += row * 3 + (row / 3) * 18;
-			found_b[grid[block] % 9] = 1;
+			found_b[grid[block] % 9]++;
 		}
 
 		for (column = 0; column < 9; column++) {
