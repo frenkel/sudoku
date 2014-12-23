@@ -1,1 +1,1 @@
-int verify(int[]);
+int verify(int *);

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void print(int grid[])
+void print(int *grid)
 {
 	int i;
 

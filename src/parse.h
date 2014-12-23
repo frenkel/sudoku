@@ -1,1 +1,1 @@
-void load(int[]);
+void load(int *);

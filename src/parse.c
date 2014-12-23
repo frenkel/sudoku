@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void load(int grid[])
+void load(int *grid)
 {
 	int i;
 	char c;

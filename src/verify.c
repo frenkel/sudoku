@@ -1,4 +1,4 @@
-int verify(int grid[])
+int verify(int *grid)
 {
 	int found_h[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	int found_v[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };

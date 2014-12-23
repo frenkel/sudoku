@@ -1,1 +1,1 @@
-void print(int[]);
+void print(int *);
